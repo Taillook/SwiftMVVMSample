@@ -8,14 +8,18 @@
 
 import ObjectMapper
 
-class MainWeather: Mappable {
-    var main: MainWeather?
+class Weather: Mappable {
+    var description = ""
+    var icon = ""
+    var main = ""
     
-    required init?(map: Map) {
-    }
+    init() {}
+    required convenience init?(map: Map) { self.init() }
     
     func mapping(map: Map) {
-        main            <- map["main"]
+        description <- map["description"]
+        icon        <- map["icon"]
+        main        <- map["main"]
     }
 }
 
